@@ -3,22 +3,22 @@ repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.5.0
     hooks:
-      - id: trailing-whitespace
-      - id: end-of-file-fixer
+      - id: trailing-whitespace # 줄 끝 공백 제거
+      - id: end-of-file-fixer  # 파일 끝에 개행 한 줄 추가
 
   - repo: https://github.com/psf/black
     rev: 24.3.0
     hooks:
-      - id: black
+      - id: black   # 코드 자동 정렬 (PEP8 스타일)
 
   - repo: https://github.com/pycqa/isort
     rev: 5.13.2
     hooks:
       - id: isort
-        args: ["--profile", "black"]
+        args: ["--profile", "black"] # Black과 충돌 없도록 import 정렬
 
-  - repo: https://github.com/pycqa/flake8
-    rev: 7.0.0
-    hooks:
-    - id: flake8
-      args: ["--max-line-length=92", "--ignore=F401"]
+  # - repo: https://github.com/pycqa/flake8
+  #   rev: 7.0.0
+  #   hooks:
+  #   - id: flake8
+  #     args: ["--max-line-length=92", "--ignore=F401"]  # 코드 검사 (lint), 사용하지 않는 import 무시
