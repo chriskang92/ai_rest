@@ -94,7 +94,7 @@ class RestaurantAdmin(admin.ModelAdmin):
 @admin.register(RestaurantCategory)
 class RestaurantCategoryIAdmin(admin.ModelAdmin):
     list_display = ["name"]
-    fields = ["cuisine_type", "name"]
+    fields = ["cuisineType", "name"]
 
 
 @admin.register(CuisineType)
@@ -114,7 +114,7 @@ class ReviewImageInline(admin.TabularInline):
 
 @admin.register(Review)
 class ReviewAdmin(admin.ModelAdmin):
-    list_display = ["id", "author", "rating"]
+    list_display = ["id", "restaurant_name", "author", "rating", "content_partial"]
     inlines = [ReviewImageInline]
 
     # 인스턴스를 생성할때 인라인 표시 안하도록

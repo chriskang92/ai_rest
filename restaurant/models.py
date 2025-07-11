@@ -216,7 +216,7 @@ class Review(models.Model):
         validators=[MinValueValidator(1), MaxValueValidator(5)], default=1
     )  # 평점, 1~5 사이의 정수
     # 양의 정수만 허용되는 필드로 값의 범위를 0-9로 제한
-    Restaurant = models.ForeignKey(
+    restaurant = models.ForeignKey(
         "Restaurant", on_delete=models.CASCADE, related_name="reviews"
     )
     social_channel = models.ForeignKey(
@@ -240,6 +240,14 @@ class Review(models.Model):
     def __str__(self):
         return f"{self.author}:{self.title}"
 
+    @property  # property 데코레이터를 사용하여 인스턴스 속성으로 접근 가능
+    def restaurant_name(self):
+        return self.restaurant.name
+
+    @property
+    def content_partial(self):
+        return self.content[:20]
+
 
 class ReviewImage(models.Model):
     review = models.ForeignKey(Review, on_delete=models.CASCADE)
@@ -252,7 +260,7 @@ class ReviewImage(models.Model):
         verbose_name = "리뷰이미지"
         verbose_name_plural = "리뷰이미지"
 
-    def str(self):
+    def __str__(self):
         return f"{self.id}:{self.image}"
 
 
@@ -263,7 +271,7 @@ class SocialChannel(models.Model):
         verbose_name = "소셜채널"
         verbose_name_plural = "소셜채널"
 
-    def str(self):
+    def __str__(self):
         return self.name
 
 
@@ -276,7 +284,7 @@ class Tag(models.Model):
         verbose_name = "태그"
         verbose_name_plural = "태그"
 
-    def str(self):
+    def __str__(self):
         return self.name
 
 
@@ -290,5 +298,5 @@ class Region(models.Model):
         verbose_name_plural = "지역"
         unique_together = ("sido", "sigungu", "eupmyeondong")
 
-    def str(self):
+    def __str__(self):
         return f"{self.sido} {self.sigungu} {self.eupmyeondong}"
