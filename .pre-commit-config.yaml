@@ -17,8 +17,8 @@ repos:
       - id: isort
         args: ["--profile", "black"] # Black과 충돌 없도록 import 정렬
 
-  # - repo: https://github.com/pycqa/flake8
-  #   rev: 7.0.0
-  #   hooks:
-  #   - id: flake8
-  #     args: ["--max-line-length=92", "--ignore=F401"]  # 코드 검사 (lint), 사용하지 않는 import 무시
+  - repo: https://github.com/pycqa/flake8
+    rev: 7.0.0
+    hooks:
+    - id: flake8
+      args: ["--max-line-length=92", "--ignore=F401"]  # 코드 검사 (lint), 사용하지 않는 import 무시
