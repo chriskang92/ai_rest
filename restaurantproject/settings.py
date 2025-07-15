@@ -96,7 +96,8 @@ DATABASES = {
 }
 
 # 테스트 환경에서는 SQLite로 대체
-if os.environ.get("TEST"):
+if os.environ.get("TEST", "").lower() == "true":
+    print("✅ TEST MODE: Using SQLite")
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.sqlite3",
