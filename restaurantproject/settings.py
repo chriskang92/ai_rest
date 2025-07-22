@@ -25,7 +25,8 @@ load_dotenv(dotenv_path=os.path.join(BASE_DIR, ".env"))  # ✅ .env 파일 로�
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = "django-insecure-$193a2k-@jq$n&=v3ij$wqgbzgh08@rmhjbl^qqb+o^ulv24lc"
-SECRET_KEY = os.environ.get("SECRET_KEY", "test-secret-key")
+# SECRET_KEY = os.environ.get("SECRET_KEY", "test-secret-key")
+SECRET_KEY = "UgxAZF10zmvYYkS7cgCISsWWkP82hMaQl7HzbWhwOYyzWaiXlVBWxEtgpG3ssZlV"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
@@ -33,7 +34,7 @@ DEBUG = os.getenv("DEBUG", "False") == "True"
 
 # ALLOWED_HOSTS = []
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")
-
+# ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -45,6 +46,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "restaurant",
+    "rest_framework",
 ]
 
 MIDDLEWARE = [
@@ -83,11 +85,11 @@ WSGI_APPLICATION = "restaurantproject.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": os.environ.get("DB_NAME"),
-        "USER": os.environ.get("DB_USER"),
-        "PASSWORD": os.environ.get("DB_PASSWORD"),
-        "HOST": os.environ.get("DB_HOST"),
-        "PORT": os.environ.get("DB_PORT"),
+        "NAME": os.environ.get("DB_NAME", "restaurant_db"),
+        "USER": os.environ.get("DB_USER", "django_user"),
+        "PASSWORD": os.environ.get("DB_PASSWORD", "db_password"),
+        "HOST": os.environ.get("DB_HOST", "localhost"),
+        "PORT": os.environ.get("DB_PORT", "3306"),
         "OPTIONS": {
             "charset": "utf8mb4",
             "init_command": "SET NAMES utf8mb4",
@@ -97,7 +99,6 @@ DATABASES = {
 
 # 테스트 환경에서는 SQLite로 대체
 if os.environ.get("TEST", "").lower() == "true":
-    print("✅ TEST MODE: Using SQLite")
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.sqlite3",
@@ -105,6 +106,7 @@ if os.environ.get("TEST", "").lower() == "true":
         }
     }
 
+# Use Amazon S3 for storage for uploaded media files if not debugging
 if os.environ.get("S3_BUCKET"):
     STORAGES = {
         "default": {
@@ -130,6 +132,7 @@ if os.environ.get("S3_BUCKET"):
             },
         },
     }
+
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Password validation
@@ -175,3 +178,15 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 MEDIA_URL = "media/"
 MEDIA_ROOT = BASE_DIR / "media"
+
+# HSTS 설정 (1년)
+SECURE_HSTS_SECONDS = 31536000
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+
+# HTTPS 강제 리다이렉트
+SECURE_SSL_REDIRECT = True
+
+# 쿠키를 HTTPS 전용으로만
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
