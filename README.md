@@ -81,9 +81,9 @@ eb create \
 
 <!-- # 설정 내용
 eb create \
- --vpc.id vpc-02027670f21362b27 \
+ --vpc.id vpc-0cdf7bf4bd7f3b4b4 \
  --vpc.securitygroups sg-0c21711ec6a322509 \
  --vpc.ec2subnets subnet-027472004f1664c04,subnet-055c529c1dccbf9f7,subnet-040a41f176ae3bde8,subnet-0cbb9caae23f924c4 \
- --envvars PRODUCTION=1,DB_NAME=restaurant_db,DB_USER=admin,DB_PASSWORD=9cML3Al9miqUpOeIz6bY,DB_HOST=airest-db.c1c6aqgaevrj.ap-northeast-2.rds.amazonaws.com,S3_BUCKET=airestaurants-dev \
+ --envvars PRODUCTION=1,DB_NAME=restaurant_db,DB_USER=admin,DB_PASSWORD=9cML3Al9miqUpOeIz6bY,DB_HOST=airest-db.c1c6aqgaevrj.ap-northeast-2.rds.amazonaws.com,S3_BUCKET=elasticbeanstalk-ap-northeast-2-131228247107 \
  --vpc.elbpublic \
  --vpc.publicip -->

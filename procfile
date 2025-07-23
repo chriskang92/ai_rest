@@ -1,0 +1,1 @@
+web: gunicorn restaurantproject.wsgi:application --bind :8000
