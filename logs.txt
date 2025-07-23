@@ -1,110 +1,356 @@
 Retrieving logs...
 ============= i-0de465db18217721a ==============
 ----------------------------------------
+/var/log/web.stdout.log
+----------------------------------------
+Jul 23 04:31:58 ip-172-31-29-177 web[6898]:                ^^^^^^^^^^^^^^^
+Jul 23 04:31:58 ip-172-31-29-177 web[6898]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/gunicorn/app/base.py", line 66, in wsgi
+Jul 23 04:31:58 ip-172-31-29-177 web[6898]:    self.callable = self.load()
+Jul 23 04:31:58 ip-172-31-29-177 web[6898]:                    ^^^^^^^^^^^
+Jul 23 04:31:58 ip-172-31-29-177 web[6898]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+Jul 23 04:31:58 ip-172-31-29-177 web[6898]:    return self.load_wsgiapp()
+Jul 23 04:31:58 ip-172-31-29-177 web[6898]:           ^^^^^^^^^^^^^^^^^^^
+Jul 23 04:31:58 ip-172-31-29-177 web[6898]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+Jul 23 04:31:58 ip-172-31-29-177 web[6898]:    return util.import_app(self.app_uri)
+Jul 23 04:31:58 ip-172-31-29-177 web[6898]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Jul 23 04:31:58 ip-172-31-29-177 web[6898]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/gunicorn/util.py", line 370, in import_app
+Jul 23 04:31:58 ip-172-31-29-177 web[6898]:    mod = importlib.import_module(module)
+Jul 23 04:31:58 ip-172-31-29-177 web[6898]:          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Jul 23 04:31:58 ip-172-31-29-177 web[6898]:  File "/usr/lib64/python3.11/importlib/__init__.py", line 126, in import_module
+Jul 23 04:31:58 ip-172-31-29-177 web[6898]:    return _bootstrap._gcd_import(name[level:], package, level)
+Jul 23 04:31:58 ip-172-31-29-177 web[6898]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Jul 23 04:31:58 ip-172-31-29-177 web[6898]:  File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+Jul 23 04:31:58 ip-172-31-29-177 web[6898]:  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+Jul 23 04:31:58 ip-172-31-29-177 web[6898]:  File "<frozen importlib._bootstrap>", line 1140, in _find_and_load_unlocked
+Jul 23 04:31:58 ip-172-31-29-177 web[6898]: ModuleNotFoundError: No module named 'application'
+Jul 23 04:31:58 ip-172-31-29-177 web[6898]: [2025-07-23 04:31:58 +0000] [6898] [INFO] Worker exiting (pid: 6898)
+Jul 23 04:31:58 ip-172-31-29-177 web[6894]: [2025-07-23 04:31:58 +0000] [6894] [ERROR] Worker (pid:6898) exited with code 3
+Jul 23 04:31:58 ip-172-31-29-177 web[6894]: [2025-07-23 04:31:58 +0000] [6894] [ERROR] Shutting down: Master
+Jul 23 04:31:58 ip-172-31-29-177 web[6894]: [2025-07-23 04:31:58 +0000] [6894] [ERROR] Reason: Worker failed to boot.
+Jul 23 04:31:59 ip-172-31-29-177 web[6900]: [2025-07-23 04:31:59 +0000] [6900] [INFO] Starting gunicorn 23.0.0
+Jul 23 04:31:59 ip-172-31-29-177 web[6900]: [2025-07-23 04:31:59 +0000] [6900] [INFO] Listening at: http://127.0.0.1:8000 (6900)
+Jul 23 04:31:59 ip-172-31-29-177 web[6900]: [2025-07-23 04:31:59 +0000] [6900] [INFO] Using worker: gthread
+Jul 23 04:31:59 ip-172-31-29-177 web[6904]: [2025-07-23 04:31:59 +0000] [6904] [INFO] Booting worker with pid: 6904
+Jul 23 04:31:59 ip-172-31-29-177 web[6904]: [2025-07-23 04:31:59 +0000] [6904] [ERROR] Exception in worker process
+Jul 23 04:31:59 ip-172-31-29-177 web[6904]: Traceback (most recent call last):
+Jul 23 04:31:59 ip-172-31-29-177 web[6904]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+Jul 23 04:31:59 ip-172-31-29-177 web[6904]:    worker.init_process()
+Jul 23 04:31:59 ip-172-31-29-177 web[6904]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/gunicorn/workers/gthread.py", line 94, in init_process
+Jul 23 04:31:59 ip-172-31-29-177 web[6904]:    super().init_process()
+Jul 23 04:31:59 ip-172-31-29-177 web[6904]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/gunicorn/workers/base.py", line 135, in init_process
+Jul 23 04:31:59 ip-172-31-29-177 web[6904]:    self.load_wsgi()
+Jul 23 04:31:59 ip-172-31-29-177 web[6904]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+Jul 23 04:31:59 ip-172-31-29-177 web[6904]:    self.wsgi = self.app.wsgi()
+Jul 23 04:31:59 ip-172-31-29-177 web[6904]:                ^^^^^^^^^^^^^^^
+Jul 23 04:31:59 ip-172-31-29-177 web[6904]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/gunicorn/app/base.py", line 66, in wsgi
+Jul 23 04:31:59 ip-172-31-29-177 web[6904]:    self.callable = self.load()
+Jul 23 04:31:59 ip-172-31-29-177 web[6904]:                    ^^^^^^^^^^^
+Jul 23 04:31:59 ip-172-31-29-177 web[6904]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+Jul 23 04:31:59 ip-172-31-29-177 web[6904]:    return self.load_wsgiapp()
+Jul 23 04:31:59 ip-172-31-29-177 web[6904]:           ^^^^^^^^^^^^^^^^^^^
+Jul 23 04:31:59 ip-172-31-29-177 web[6904]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+Jul 23 04:31:59 ip-172-31-29-177 web[6904]:    return util.import_app(self.app_uri)
+Jul 23 04:31:59 ip-172-31-29-177 web[6904]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Jul 23 04:31:59 ip-172-31-29-177 web[6904]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/gunicorn/util.py", line 370, in import_app
+Jul 23 04:31:59 ip-172-31-29-177 web[6904]:    mod = importlib.import_module(module)
+Jul 23 04:31:59 ip-172-31-29-177 web[6904]:          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Jul 23 04:31:59 ip-172-31-29-177 web[6904]:  File "/usr/lib64/python3.11/importlib/__init__.py", line 126, in import_module
+Jul 23 04:31:59 ip-172-31-29-177 web[6904]:    return _bootstrap._gcd_import(name[level:], package, level)
+Jul 23 04:31:59 ip-172-31-29-177 web[6904]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Jul 23 04:31:59 ip-172-31-29-177 web[6904]:  File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+Jul 23 04:31:59 ip-172-31-29-177 web[6904]:  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+Jul 23 04:31:59 ip-172-31-29-177 web[6904]:  File "<frozen importlib._bootstrap>", line 1140, in _find_and_load_unlocked
+Jul 23 04:31:59 ip-172-31-29-177 web[6904]: ModuleNotFoundError: No module named 'application'
+Jul 23 04:31:59 ip-172-31-29-177 web[6904]: [2025-07-23 04:31:59 +0000] [6904] [INFO] Worker exiting (pid: 6904)
+Jul 23 04:31:59 ip-172-31-29-177 web[6900]: [2025-07-23 04:31:59 +0000] [6900] [ERROR] Worker (pid:6904) exited with code 3
+Jul 23 04:31:59 ip-172-31-29-177 web[6900]: [2025-07-23 04:31:59 +0000] [6900] [ERROR] Shutting down: Master
+Jul 23 04:31:59 ip-172-31-29-177 web[6900]: [2025-07-23 04:31:59 +0000] [6900] [ERROR] Reason: Worker failed to boot.
+Jul 23 04:31:59 ip-172-31-29-177 web[6906]: [2025-07-23 04:31:59 +0000] [6906] [INFO] Starting gunicorn 23.0.0
+Jul 23 04:31:59 ip-172-31-29-177 web[6906]: [2025-07-23 04:31:59 +0000] [6906] [INFO] Listening at: http://127.0.0.1:8000 (6906)
+Jul 23 04:31:59 ip-172-31-29-177 web[6906]: [2025-07-23 04:31:59 +0000] [6906] [INFO] Using worker: gthread
+Jul 23 04:31:59 ip-172-31-29-177 web[6910]: [2025-07-23 04:31:59 +0000] [6910] [INFO] Booting worker with pid: 6910
+Jul 23 04:31:59 ip-172-31-29-177 web[6910]: [2025-07-23 04:31:59 +0000] [6910] [ERROR] Exception in worker process
+Jul 23 04:31:59 ip-172-31-29-177 web[6910]: Traceback (most recent call last):
+Jul 23 04:31:59 ip-172-31-29-177 web[6910]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+Jul 23 04:31:59 ip-172-31-29-177 web[6910]:    worker.init_process()
+Jul 23 04:31:59 ip-172-31-29-177 web[6910]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/gunicorn/workers/gthread.py", line 94, in init_process
+Jul 23 04:31:59 ip-172-31-29-177 web[6910]:    super().init_process()
+Jul 23 04:31:59 ip-172-31-29-177 web[6910]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/gunicorn/workers/base.py", line 135, in init_process
+Jul 23 04:31:59 ip-172-31-29-177 web[6910]:    self.load_wsgi()
+Jul 23 04:31:59 ip-172-31-29-177 web[6910]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+Jul 23 04:31:59 ip-172-31-29-177 web[6910]:    self.wsgi = self.app.wsgi()
+Jul 23 04:31:59 ip-172-31-29-177 web[6910]:                ^^^^^^^^^^^^^^^
+Jul 23 04:31:59 ip-172-31-29-177 web[6910]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/gunicorn/app/base.py", line 66, in wsgi
+Jul 23 04:31:59 ip-172-31-29-177 web[6910]:    self.callable = self.load()
+Jul 23 04:31:59 ip-172-31-29-177 web[6910]:                    ^^^^^^^^^^^
+Jul 23 04:31:59 ip-172-31-29-177 web[6910]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+Jul 23 04:31:59 ip-172-31-29-177 web[6910]:    return self.load_wsgiapp()
+Jul 23 04:31:59 ip-172-31-29-177 web[6910]:           ^^^^^^^^^^^^^^^^^^^
+Jul 23 04:31:59 ip-172-31-29-177 web[6910]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+Jul 23 04:31:59 ip-172-31-29-177 web[6910]:    return util.import_app(self.app_uri)
+Jul 23 04:31:59 ip-172-31-29-177 web[6910]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Jul 23 04:31:59 ip-172-31-29-177 web[6910]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/gunicorn/util.py", line 370, in import_app
+Jul 23 04:31:59 ip-172-31-29-177 web[6910]:    mod = importlib.import_module(module)
+Jul 23 04:31:59 ip-172-31-29-177 web[6910]:          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Jul 23 04:31:59 ip-172-31-29-177 web[6910]:  File "/usr/lib64/python3.11/importlib/__init__.py", line 126, in import_module
+Jul 23 04:31:59 ip-172-31-29-177 web[6910]:    return _bootstrap._gcd_import(name[level:], package, level)
+Jul 23 04:31:59 ip-172-31-29-177 web[6910]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Jul 23 04:31:59 ip-172-31-29-177 web[6910]:  File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+Jul 23 04:31:59 ip-172-31-29-177 web[6910]:  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+Jul 23 04:31:59 ip-172-31-29-177 web[6910]:  File "<frozen importlib._bootstrap>", line 1140, in _find_and_load_unlocked
+Jul 23 04:31:59 ip-172-31-29-177 web[6910]: ModuleNotFoundError: No module named 'application'
+Jul 23 04:31:59 ip-172-31-29-177 web[6910]: [2025-07-23 04:31:59 +0000] [6910] [INFO] Worker exiting (pid: 6910)
+Jul 23 04:31:59 ip-172-31-29-177 web[6906]: [2025-07-23 04:31:59 +0000] [6906] [ERROR] Worker (pid:6910) exited with code 3
+Jul 23 04:31:59 ip-172-31-29-177 web[6906]: [2025-07-23 04:31:59 +0000] [6906] [ERROR] Shutting down: Master
+Jul 23 04:31:59 ip-172-31-29-177 web[6906]: [2025-07-23 04:31:59 +0000] [6906] [ERROR] Reason: Worker failed to boot.
+
+
+----------------------------------------
 /var/log/eb-engine.log
 ----------------------------------------
-        File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/pip/_vendor/pep517/in_process/_in_process.py", line 333, in main
-          json_out['return_val'] = hook(**hook_input['kwargs'])
-                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-        File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/pip/_vendor/pep517/in_process/_in_process.py", line 118, in get_requires_for_build_wheel
-          return hook(config_settings)
-                 ^^^^^^^^^^^^^^^^^^^^^
-        File "/tmp/pip-build-env-yqwp6gdh/overlay/lib/python3.11/site-packages/setuptools/build_meta.py", line 331, in get_requires_for_build_wheel
-          return self._get_build_requires(config_settings, requirements=[])
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-        File "/tmp/pip-build-env-yqwp6gdh/overlay/lib/python3.11/site-packages/setuptools/build_meta.py", line 301, in _get_build_requires
-          self.run_setup()
-        File "/tmp/pip-build-env-yqwp6gdh/overlay/lib/python3.11/site-packages/setuptools/build_meta.py", line 317, in run_setup
-          exec(code, locals())
-        File "<string>", line 156, in <module>
-        File "<string>", line 49, in get_config_posix
-        File "<string>", line 28, in find_package_name
-      Exception: Can not find valid pkg-config name.
-      Specify MYSQLCLIENT_CFLAGS and MYSQLCLIENT_LDFLAGS env vars manually
-      [end of output]
+2025/07/23 04:31:54.841819 [INFO] Running command: /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:ap-northeast-2:131228247107:stack/awseb-e-4pgjcgmqe2-stack/d5c23990-676c-11f0-bbe4-0abe8096f31f -r AWSEBBeanstalkMetadata --region ap-northeast-2
+2025/07/23 04:31:55.241975 [INFO] Generating rsyslog config from Procfile
+2025/07/23 04:31:55.245802 [INFO] Running command: systemctl restart rsyslog.service
+2025/07/23 04:31:55.609413 [INFO] Executing instruction: PostBuildEbExtension
+2025/07/23 04:31:55.609433 [INFO] Starting executing the config set Infra-EmbeddedPostBuild.
+2025/07/23 04:31:55.609443 [INFO] Running command: /opt/aws/bin/cfn-init -s arn:aws:cloudformation:ap-northeast-2:131228247107:stack/awseb-e-4pgjcgmqe2-stack/d5c23990-676c-11f0-bbe4-0abe8096f31f -r AWSEBAutoScalingGroup --region ap-northeast-2 --configsets Infra-EmbeddedPostBuild
+2025/07/23 04:31:55.950648 [INFO] Finished executing the config set Infra-EmbeddedPostBuild.
 
-  note: This error originates from a subprocess, and is likely not a problem with pip.
-error: subprocess-exited-with-error
+2025/07/23 04:31:55.950675 [INFO] Executing instruction: CleanEbExtensions
+2025/07/23 04:31:55.950700 [INFO] Cleaned ebextensions subdirectories from app staging directory.
+2025/07/23 04:31:55.950702 [INFO] Executing instruction: RunAppDeployPreDeployHooks
+2025/07/23 04:31:55.950729 [INFO] Executing platform hooks in .platform/hooks/predeploy/
+2025/07/23 04:31:55.950774 [INFO] The dir .platform/hooks/predeploy/ does not exist
+2025/07/23 04:31:55.950786 [INFO] Finished running scripts in /var/app/staging/.platform/hooks/predeploy
+2025/07/23 04:31:55.950791 [INFO] Executing instruction: stop X-Ray
+2025/07/23 04:31:55.950793 [INFO] stop X-Ray ...
+2025/07/23 04:31:55.950803 [INFO] Running command: systemctl show -p PartOf xray.service
+2025/07/23 04:31:55.965293 [WARN] stopProcess Warning: process xray is not registered
+2025/07/23 04:31:55.965368 [INFO] Running command: systemctl stop xray.service
+2025/07/23 04:31:55.980592 [INFO] Executing instruction: stop proxy
+2025/07/23 04:31:55.980626 [INFO] Running command: systemctl show -p PartOf httpd.service
+2025/07/23 04:31:55.998445 [WARN] deregisterProcess Warning: process httpd is not registered, skipping...
 
-× Getting requirements to build wheel did not run successfully.
-│ exit code: 1
-╰─> See above for output.
+2025/07/23 04:31:55.998488 [INFO] Running command: systemctl show -p PartOf nginx.service
+2025/07/23 04:31:56.016259 [WARN] deregisterProcess Warning: process nginx is not registered, skipping...
 
-note: This error originates from a subprocess, and is likely not a problem with pip.
+2025/07/23 04:31:56.016287 [INFO] Executing instruction: FlipApplication
+2025/07/23 04:31:56.016291 [INFO] Fetching environment variables...
+2025/07/23 04:31:56.016582 [INFO] Purge old process...
+2025/07/23 04:31:56.016604 [INFO] Removing /var/app/current/ if it exists
+2025/07/23 04:31:56.016618 [INFO] Renaming /var/app/staging/ to /var/app/current/
+2025/07/23 04:31:56.016640 [INFO] Register application processes...
+2025/07/23 04:31:56.016644 [INFO] Registering the proc: web
 
-[notice] A new release of pip available: 22.3.1 -> 25.1.1
-[notice] To update, run: python3.11 -m pip install --upgrade pip
+2025/07/23 04:31:56.016656 [INFO] Running command: systemctl show -p PartOf web.service
+2025/07/23 04:31:56.030154 [INFO] Running command: systemctl daemon-reload
+2025/07/23 04:31:56.284462 [INFO] Running command: systemctl reset-failed
+2025/07/23 04:31:56.293695 [INFO] Running command: systemctl is-enabled eb-app.target
+2025/07/23 04:31:56.301976 [INFO] Copying file /opt/elasticbeanstalk/config/private/aws-eb.target to /etc/systemd/system/eb-app.target
+2025/07/23 04:31:56.303817 [INFO] Running command: systemctl enable eb-app.target
+2025/07/23 04:31:56.563059 [INFO] Created symlink /etc/systemd/system/multi-user.target.wants/eb-app.target → /etc/systemd/system/eb-app.target.
 
-2025/07/23 04:16:51.175912 [ERROR] An error occurred during execution of command [app-deploy] - [InstallDependency]. Stop running the command. Error: fail to install dependencies with requirements.txt file with error Command /var/app/venv/staging-LQM1lest/bin/pip install -r requirements.txt failed with error exit status 1. Stderr:  error: subprocess-exited-with-error
+2025/07/23 04:31:56.563095 [INFO] Running command: systemctl start eb-app.target
+2025/07/23 04:31:56.573762 [INFO] Running command: systemctl enable web.service
+2025/07/23 04:31:56.858182 [INFO] Created symlink /etc/systemd/system/multi-user.target.wants/web.service → /etc/systemd/system/web.service.
 
-  × Getting requirements to build wheel did not run successfully.
-  │ exit code: 1
-  ╰─> [29 lines of output]
-      Trying pkg-config --exists mysqlclient
-      Command 'pkg-config --exists mysqlclient' returned non-zero exit status 1.
-      Trying pkg-config --exists mariadb
-      Command 'pkg-config --exists mariadb' returned non-zero exit status 1.
-      Trying pkg-config --exists libmariadb
-      Command 'pkg-config --exists libmariadb' returned non-zero exit status 1.
-      Trying pkg-config --exists perconaserverclient
-      Command 'pkg-config --exists perconaserverclient' returned non-zero exit status 1.
-      Traceback (most recent call last):
-        File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/pip/_vendor/pep517/in_process/_in_process.py", line 351, in <module>
-          main()
-        File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/pip/_vendor/pep517/in_process/_in_process.py", line 333, in main
-          json_out['return_val'] = hook(**hook_input['kwargs'])
-                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-        File "/var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages/pip/_vendor/pep517/in_process/_in_process.py", line 118, in get_requires_for_build_wheel
-          return hook(config_settings)
-                 ^^^^^^^^^^^^^^^^^^^^^
-        File "/tmp/pip-build-env-yqwp6gdh/overlay/lib/python3.11/site-packages/setuptools/build_meta.py", line 331, in get_requires_for_build_wheel
-          return self._get_build_requires(config_settings, requirements=[])
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-        File "/tmp/pip-build-env-yqwp6gdh/overlay/lib/python3.11/site-packages/setuptools/build_meta.py", line 301, in _get_build_requires
-          self.run_setup()
-        File "/tmp/pip-build-env-yqwp6gdh/overlay/lib/python3.11/site-packages/setuptools/build_meta.py", line 317, in run_setup
-          exec(code, locals())
-        File "<string>", line 156, in <module>
-        File "<string>", line 49, in get_config_posix
-        File "<string>", line 28, in find_package_name
-      Exception: Can not find valid pkg-config name.
-      Specify MYSQLCLIENT_CFLAGS and MYSQLCLIENT_LDFLAGS env vars manually
-      [end of output]
+2025/07/23 04:31:56.858220 [INFO] Running command: systemctl show -p PartOf web.service
+2025/07/23 04:31:56.869737 [INFO] Running command: systemctl is-active web.service
+2025/07/23 04:31:56.877711 [INFO] Running command: systemctl start web.service
+2025/07/23 04:31:56.954585 [INFO] Executing instruction: start X-Ray
+2025/07/23 04:31:56.954624 [INFO] X-Ray is not enabled.
+2025/07/23 04:31:56.954629 [INFO] Executing instruction: start proxy with new configuration
+2025/07/23 04:31:56.954658 [INFO] Running command: /usr/sbin/nginx -t -c /var/proxy/staging/nginx/nginx.conf
+2025/07/23 04:31:57.017890 [INFO] nginx: [warn] could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+nginx: the configuration file /var/proxy/staging/nginx/nginx.conf syntax is ok
+nginx: configuration file /var/proxy/staging/nginx/nginx.conf test is successful
 
-  note: This error originates from a subprocess, and is likely not a problem with pip.
-error: subprocess-exited-with-error
+2025/07/23 04:31:57.018009 [INFO] Running command: cp -rp /var/proxy/staging/nginx/* /etc/nginx
+2025/07/23 04:31:57.023790 [INFO] Running command: systemctl show -p PartOf nginx.service
+2025/07/23 04:31:57.040008 [INFO] Running command: systemctl daemon-reload
+2025/07/23 04:31:57.370662 [INFO] Running command: systemctl reset-failed
+2025/07/23 04:31:57.382402 [INFO] Running command: systemctl show -p PartOf nginx.service
+2025/07/23 04:31:57.429465 [INFO] Running command: systemctl is-active nginx.service
+2025/07/23 04:31:57.483540 [INFO] Running command: systemctl start nginx.service
+2025/07/23 04:31:57.670778 [INFO] Executing instruction: configureSqsd
+2025/07/23 04:31:57.670796 [INFO] This is a web server environment instance, skip configure sqsd daemon ...
+2025/07/23 04:31:57.670807 [INFO] Executing instruction: startSqsd
+2025/07/23 04:31:57.670810 [INFO] This is a web server environment instance, skip start sqsd daemon ...
+2025/07/23 04:31:57.670819 [INFO] Executing instruction: Track pids in healthd
+2025/07/23 04:31:57.670824 [INFO] This is an enhanced health env...
+2025/07/23 04:31:57.670835 [INFO] Running command: systemctl show -p ConsistsOf aws-eb.target | cut -d= -f2
+2025/07/23 04:31:57.686221 [INFO] healthd.service nginx.service cfn-hup.service
 
-× Getting requirements to build wheel did not run successfully.
-│ exit code: 1
-╰─> See above for output.
+2025/07/23 04:31:57.686266 [INFO] Running command: systemctl show -p ConsistsOf eb-app.target | cut -d= -f2
+2025/07/23 04:31:57.701328 [INFO] web.service
 
-note: This error originates from a subprocess, and is likely not a problem with pip.
+2025/07/23 04:31:57.702333 [INFO] Executing instruction: RunAppDeployPostDeployHooks
+2025/07/23 04:31:57.702391 [INFO] Executing platform hooks in .platform/hooks/postdeploy/
+2025/07/23 04:31:57.702414 [INFO] The dir .platform/hooks/postdeploy/ does not exist
+2025/07/23 04:31:57.702417 [INFO] Finished running scripts in /var/app/current/.platform/hooks/postdeploy
+2025/07/23 04:31:57.702424 [INFO] Executing cleanup logic
+2025/07/23 04:31:57.702508 [INFO] CommandService Response: {"status":"SUCCESS","api_version":"1.0","results":[{"status":"SUCCESS","msg":"Engine execution has succeeded.","returncode":0,"events":[{"msg":"Instance deployment successfully generated a 'Procfile'.","timestamp":1753245113149,"severity":"INFO"},{"msg":"Instance deployment completed successfully.","timestamp":1753245117702,"severity":"INFO"}]}]}
 
-[notice] A new release of pip available: 22.3.1 -> 25.1.1
-[notice] To update, run: python3.11 -m pip install --upgrade pip
+2025/07/23 04:31:57.702661 [INFO] Platform Engine finished execution on command: app-deploy
 
+2025/07/23 04:38:09.809883 [INFO] Starting...
+2025/07/23 04:38:09.809939 [INFO] Starting EBPlatform-PlatformEngine
+2025/07/23 04:38:09.809962 [INFO] reading event message file
+2025/07/23 04:38:09.811754 [INFO] Engine received EB command cfn-hup-exec
 
-2025/07/23 04:16:51.175922 [INFO] Executing cleanup logic
-2025/07/23 04:16:51.176014 [INFO] CommandService Response: {"status":"FAILURE","api_version":"1.0","results":[{"status":"FAILURE","msg":"Engine execution has encountered an error.","returncode":1,"events":[{"msg":"Instance deployment failed to install application dependencies. The deployment failed.","timestamp":1753244211175,"severity":"ERROR"},{"msg":"Instance deployment failed. For details, see 'eb-engine.log'.","timestamp":1753244211175,"severity":"ERROR"}]}]}
+2025/07/23 04:38:09.990476 [INFO] Running command: /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:ap-northeast-2:131228247107:stack/awseb-e-4pgjcgmqe2-stack/d5c23990-676c-11f0-bbe4-0abe8096f31f -r AWSEBAutoScalingGroup --region ap-northeast-2
+2025/07/23 04:38:10.327002 [INFO] Running command: /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:ap-northeast-2:131228247107:stack/awseb-e-4pgjcgmqe2-stack/d5c23990-676c-11f0-bbe4-0abe8096f31f -r AWSEBBeanstalkMetadata --region ap-northeast-2
+2025/07/23 04:38:10.670661 [INFO] checking whether command tail-log is applicable to this instance...
+2025/07/23 04:38:10.670674 [INFO] this command is applicable to the instance, thus instance should execute command
+2025/07/23 04:38:10.670677 [INFO] Engine command: (tail-log)
 
-2025/07/23 04:16:51.177400 [INFO] Platform Engine finished execution on command: app-deploy
-
-2025/07/23 04:18:42.613597 [INFO] Starting...
-2025/07/23 04:18:42.613643 [INFO] Starting EBPlatform-PlatformEngine
-2025/07/23 04:18:42.613663 [INFO] reading event message file
-2025/07/23 04:18:42.613964 [INFO] Engine received EB command cfn-hup-exec
-
-2025/07/23 04:18:42.678648 [INFO] Running command: /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:ap-northeast-2:131228247107:stack/awseb-e-4pgjcgmqe2-stack/d5c23990-676c-11f0-bbe4-0abe8096f31f -r AWSEBAutoScalingGroup --region ap-northeast-2
-2025/07/23 04:18:42.984870 [INFO] Running command: /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:ap-northeast-2:131228247107:stack/awseb-e-4pgjcgmqe2-stack/d5c23990-676c-11f0-bbe4-0abe8096f31f -r AWSEBBeanstalkMetadata --region ap-northeast-2
-2025/07/23 04:18:43.276153 [INFO] checking whether command tail-log is applicable to this instance...
-2025/07/23 04:18:43.276169 [INFO] this command is applicable to the instance, thus instance should execute command
-2025/07/23 04:18:43.276172 [INFO] Engine command: (tail-log)
-
-2025/07/23 04:18:43.276223 [INFO] Executing instruction: GetTailLogs
-2025/07/23 04:18:43.276227 [INFO] Tail Logs...
-2025/07/23 04:18:43.276679 [INFO] Running command: tail -n 100 /var/log/eb-engine.log
+2025/07/23 04:38:10.670737 [INFO] Executing instruction: GetTailLogs
+2025/07/23 04:38:10.670741 [INFO] Tail Logs...
+2025/07/23 04:38:10.671854 [INFO] Running command: tail -n 100 /var/log/web.stdout.log
+2025/07/23 04:38:10.674409 [INFO] Running command: tail -n 100 /var/log/eb-engine.log
 
 
 ----------------------------------------
 /var/log/eb-hooks.log
 ----------------------------------------
+2025/07/23 04:31:12.978554 [INFO] Running command: .platform/hooks/prebuild/01_pip_upgrade.sh
+2025/07/23 04:31:16.368242 [INFO] Requirement already satisfied: pip in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (22.3.1)
+Collecting pip
+  Downloading pip-25.1.1-py3-none-any.whl (1.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 50.4 MB/s eta 0:00:00
+Requirement already satisfied: setuptools in /var/app/venv/staging-LQM1lest/lib64/python3.11/site-packages (65.5.1)
+Collecting setuptools
+  Using cached setuptools-80.9.0-py3-none-any.whl (1.2 MB)
+Collecting wheel
+  Downloading wheel-0.45.1-py3-none-any.whl (72 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 72.5/72.5 kB 14.0 MB/s eta 0:00:00
+Installing collected packages: wheel, setuptools, pip
+  Attempting uninstall: setuptools
+    Found existing installation: setuptools 65.5.1
+    Uninstalling setuptools-65.5.1:
+      Successfully uninstalled setuptools-65.5.1
+  Attempting uninstall: pip
+    Found existing installation: pip 22.3.1
+    Uninstalling pip-22.3.1:
+      Successfully uninstalled pip-22.3.1
+Successfully installed pip-25.1.1 setuptools-80.9.0 wheel-0.45.1
+
+
+
+----------------------------------------
+/var/log/nginx/access.log
+----------------------------------------
+172.31.43.150 - - [23/Jul/2025:04:32:05 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.31.67 - - [23/Jul/2025:04:32:08 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.43.150 - - [23/Jul/2025:04:32:20 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.31.67 - - [23/Jul/2025:04:32:23 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.43.150 - - [23/Jul/2025:04:32:35 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.31.67 - - [23/Jul/2025:04:32:38 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.43.150 - - [23/Jul/2025:04:32:50 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.31.67 - - [23/Jul/2025:04:32:53 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.43.150 - - [23/Jul/2025:04:33:05 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.31.67 - - [23/Jul/2025:04:33:08 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.43.150 - - [23/Jul/2025:04:33:20 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.31.67 - - [23/Jul/2025:04:33:23 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.43.150 - - [23/Jul/2025:04:33:35 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.31.67 - - [23/Jul/2025:04:33:38 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.43.150 - - [23/Jul/2025:04:33:50 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.31.67 - - [23/Jul/2025:04:33:53 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.43.150 - - [23/Jul/2025:04:34:05 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.31.67 - - [23/Jul/2025:04:34:08 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.43.150 - - [23/Jul/2025:04:34:20 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.31.67 - - [23/Jul/2025:04:34:23 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.43.150 - - [23/Jul/2025:04:34:35 +0000] "GET / HTTP/1.1" 502 150 "-" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_2; en-us) AppleWebKit/531.21.8 (KHTML, like Gecko) Version/4.0.4 Safari/531.21.10" "52.34.228.235"
+172.31.43.150 - - [23/Jul/2025:04:34:35 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.31.67 - - [23/Jul/2025:04:34:38 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.43.150 - - [23/Jul/2025:04:34:50 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.31.67 - - [23/Jul/2025:04:34:53 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.43.150 - - [23/Jul/2025:04:35:05 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.31.67 - - [23/Jul/2025:04:35:08 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.43.150 - - [23/Jul/2025:04:35:20 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.31.67 - - [23/Jul/2025:04:35:23 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.43.150 - - [23/Jul/2025:04:35:35 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.31.67 - - [23/Jul/2025:04:35:38 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.43.150 - - [23/Jul/2025:04:35:50 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.31.67 - - [23/Jul/2025:04:35:53 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.43.150 - - [23/Jul/2025:04:36:05 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.31.67 - - [23/Jul/2025:04:36:08 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.43.150 - - [23/Jul/2025:04:36:20 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.31.67 - - [23/Jul/2025:04:36:23 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.43.150 - - [23/Jul/2025:04:36:35 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.31.67 - - [23/Jul/2025:04:36:38 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.43.150 - - [23/Jul/2025:04:36:50 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.31.67 - - [23/Jul/2025:04:36:53 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.43.150 - - [23/Jul/2025:04:36:59 +0000] "GET / HTTP/1.1" 502 552 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36" "122.40.179.170"
+172.31.43.150 - - [23/Jul/2025:04:36:59 +0000] "GET /favicon.ico HTTP/1.1" 502 552 "http://airestaurants-dev.eba-wtx3jyp2.ap-northeast-2.elasticbeanstalk.com/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36" "122.40.179.170"
+172.31.43.150 - - [23/Jul/2025:04:37:05 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.31.67 - - [23/Jul/2025:04:37:08 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.43.150 - - [23/Jul/2025:04:37:20 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.31.67 - - [23/Jul/2025:04:37:23 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.43.150 - - [23/Jul/2025:04:37:35 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.31.67 - - [23/Jul/2025:04:37:38 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.43.150 - - [23/Jul/2025:04:37:50 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.31.67 - - [23/Jul/2025:04:37:53 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.43.150 - - [23/Jul/2025:04:38:05 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.31.67 - - [23/Jul/2025:04:38:08 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+
+
+----------------------------------------
+/var/log/nginx/error.log
+----------------------------------------
+2025/07/23 04:31:56 [warn] 6828#6828: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2025/07/23 04:31:57 [warn] 6864#6864: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2025/07/23 04:31:57 [warn] 6865#6865: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2025/07/23 04:32:05 [error] 6868#6868: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.43.150, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:32:08 [error] 6867#6867: *3 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.31.67, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:32:20 [error] 6868#6868: *5 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.43.150, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:32:23 [error] 6868#6868: *7 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.31.67, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:32:35 [error] 6868#6868: *9 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.43.150, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:32:38 [error] 6868#6868: *11 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.31.67, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:32:50 [error] 6868#6868: *13 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.43.150, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:32:53 [error] 6868#6868: *15 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.31.67, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:33:05 [error] 6868#6868: *17 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.43.150, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:33:08 [error] 6868#6868: *19 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.31.67, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:33:20 [error] 6868#6868: *21 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.43.150, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:33:23 [error] 6868#6868: *23 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.31.67, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:33:35 [error] 6868#6868: *25 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.43.150, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:33:38 [error] 6868#6868: *27 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.31.67, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:33:50 [error] 6868#6868: *29 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.43.150, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:33:53 [error] 6868#6868: *31 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.31.67, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:34:05 [error] 6868#6868: *33 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.43.150, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:34:08 [error] 6868#6868: *35 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.31.67, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:34:20 [error] 6867#6867: *37 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.43.150, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:34:23 [error] 6867#6867: *39 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.31.67, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:34:35 [error] 6867#6867: *41 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.43.150, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "52.79.200.116"
+2025/07/23 04:34:35 [error] 6867#6867: *43 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.43.150, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:34:38 [error] 6867#6867: *45 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.31.67, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:34:50 [error] 6867#6867: *47 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.43.150, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:34:53 [error] 6867#6867: *49 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.31.67, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:35:05 [error] 6867#6867: *51 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.43.150, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:35:08 [error] 6867#6867: *53 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.31.67, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:35:20 [error] 6867#6867: *55 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.43.150, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:35:23 [error] 6867#6867: *57 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.31.67, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:35:35 [error] 6867#6867: *59 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.43.150, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:35:38 [error] 6867#6867: *61 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.31.67, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:35:50 [error] 6867#6867: *63 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.43.150, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:35:53 [error] 6867#6867: *65 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.31.67, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:36:05 [error] 6867#6867: *67 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.43.150, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:36:08 [error] 6868#6868: *69 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.31.67, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:36:20 [error] 6868#6868: *71 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.43.150, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:36:23 [error] 6868#6868: *73 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.31.67, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:36:35 [error] 6868#6868: *75 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.43.150, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:36:38 [error] 6868#6868: *77 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.31.67, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:36:50 [error] 6868#6868: *79 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.43.150, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:36:53 [error] 6868#6868: *81 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.31.67, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:36:59 [error] 6868#6868: *83 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.43.150, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "airestaurants-dev.eba-wtx3jyp2.ap-northeast-2.elasticbeanstalk.com"
+2025/07/23 04:36:59 [error] 6868#6868: *83 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.43.150, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://127.0.0.1:8000/favicon.ico", host: "airestaurants-dev.eba-wtx3jyp2.ap-northeast-2.elasticbeanstalk.com", referrer: "http://airestaurants-dev.eba-wtx3jyp2.ap-northeast-2.elasticbeanstalk.com/"
+2025/07/23 04:37:05 [error] 6868#6868: *86 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.43.150, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:37:08 [error] 6868#6868: *88 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.31.67, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:37:20 [error] 6868#6868: *90 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.43.150, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:37:23 [error] 6868#6868: *92 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.31.67, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:37:35 [error] 6868#6868: *94 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.43.150, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:37:38 [error] 6868#6868: *96 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.31.67, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:37:50 [error] 6868#6868: *98 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.43.150, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:37:53 [error] 6868#6868: *100 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.31.67, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:38:05 [error] 6867#6867: *102 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.43.150, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
+2025/07/23 04:38:08 [error] 6867#6867: *104 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.31.67, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.29.177"
